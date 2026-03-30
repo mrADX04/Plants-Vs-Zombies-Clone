@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bpxg60yvv31ad"]
+
+[ext_resource type="Texture2D" uid="uid://o4p3hywgjvqq" path="res://icon.svg" id="1_f8cdk"]
+[ext_resource type="Script" uid="uid://c35ym7gdkffic" path="res://Scripts/Projectile.cs" id="1_yr2qt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr2qt"]
+radius = 3.0
+height = 71.99715
+
+[node name="Projectile" type="Area2D" unique_id=1010719431]
+script = ExtResource("1_yr2qt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=93505211]
+position = Vector2(0.20000005, 0.256)
+scale = Vector2(0.05, 0.004)
+texture = ExtResource("1_f8cdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=175521066]
+position = Vector2(0.20000005, 0.256)
+rotation = 1.5720925
+scale = Vector2(0.05, 0.004)
+shape = SubResource("CapsuleShape2D_yr2qt")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b58syc1u816g3"]
+
+[ext_resource type="Script" uid="uid://cnhcyn845nc2s" path="res://Scripts/Peashooter.cs" id="1_ni37a"]
+[ext_resource type="PackedScene" uid="uid://bpxg60yvv31ad" path="res://Scenes/projectile.tscn" id="2_mhtpp"]
+[ext_resource type="Texture2D" uid="uid://q6er1xg57enw" path="res://Assets/Sprites/peashooter.png" id="3_mhtpp"]
+
+[node name="Peashooter" type="Node2D" unique_id=689919337]
+script = ExtResource("1_ni37a")
+ProjectileScene = ExtResource("2_mhtpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799648940]
+texture_filter = 1
+texture = ExtResource("3_mhtpp")
+
+[node name="Timer" type="Timer" parent="." unique_id=651201479]
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=1125394098]
+position = Vector2(4, -2)

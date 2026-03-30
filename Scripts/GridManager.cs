@@ -61,14 +61,14 @@ public partial class GridManager : Node2D
         for (int i = 0; i <= GridWidth; i++)
         {
             float x = GridOffset.X + (i * CellSize);
-            DrawLine(new Vector2(x, GridOffset.Y), new Vector2(x, GridOffset.Y + totalH), Colors.White, 1.0f);
+            DrawLine(new Vector2(x, GridOffset.Y), new Vector2(x, GridOffset.Y + totalH), Colors.Green, 1.0f);
         }
 
         // Draw Horizontal Lines
         for (int j = 0; j <= GridHeight; j++)
         {
             float y = GridOffset.Y + (j * CellSize);
-            DrawLine(new Vector2(GridOffset.X, y), new Vector2(GridOffset.X + totalW, y), Colors.White, 1.0f);
+            DrawLine(new Vector2(GridOffset.X, y), new Vector2(GridOffset.X + totalW, y), Colors.Green, 1.0f);
         }
     }
 
@@ -82,15 +82,14 @@ public partial class GridManager : Node2D
             return;
         }
 
-        // 1. Instantiate as a CharacterBody2D
-        // We use <CharacterBody2D> here instead of <Node2D>
-        CharacterBody2D newCharacter = ObjectToSpawn.Instantiate<CharacterBody2D>();
+        // 1. Instantiate as a Node2D
+        Node2D newObject = ObjectToSpawn.Instantiate<Node2D>();
 
         // 3. Set the position to our calculated snap point
-        newCharacter.Position = pos;
+        newObject.Position = pos;
 
         // 4. Add it as a child of the GridManager
-        AddChild(newCharacter);
+        AddChild(newObject);
 
         GD.Print("Successfully spawned at: " + pos);
 

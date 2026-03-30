@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://f1prgnylf3oo"]
+
+[node name="SeedTray" type="CanvasLayer" unique_id=1958067200]
+
+[node name="TrayBar" type="PanelContainer" parent="." unique_id=388014001]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TrayLayout" type="HBoxContainer" parent="TrayBar" unique_id=897216717]
+layout_mode = 2
+
+[node name="Suncounter" type="HBoxContainer" parent="TrayBar/TrayLayout" unique_id=1345068527]
+layout_mode = 2
+
+[node name="SunIcon" type="TextureRect" parent="TrayBar/TrayLayout/Suncounter" unique_id=271623155]
+layout_mode = 2
+
+[node name="SunLabel" type="Label" parent="TrayBar/TrayLayout/Suncounter" unique_id=644044246]
+layout_mode = 2
+
+[node name="CardContainer" type="HBoxContainer" parent="TrayBar/TrayLayout" unique_id=371133864]
+layout_mode = 2

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bq1nsoy823nhi"]
+
+[ext_resource type="Texture2D" uid="uid://d1bxj1nviufcu" path="res://Assets/Sprites/sunflower.png" id="1_tqto8"]
+
+[node name="Sunflower" type="Node2D" unique_id=578578951]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=299755970]
+texture_filter = 1
+texture = ExtResource("1_tqto8")

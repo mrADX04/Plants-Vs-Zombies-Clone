@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r1k7rmvjooj"
-path="res://.godot/imported/Wallnut.png-bbf2c497841fc5194208384a420b39cc.ctex"
+uid="uid://q6er1xg57enw"
+path="res://.godot/imported/peashooter.png-a5a11838cdf2b339dbda8f371f7c1231.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Wallnut.png"
-dest_files=["res://.godot/imported/Wallnut.png-bbf2c497841fc5194208384a420b39cc.ctex"]
+source_file="res://Assets/Sprites/peashooter.png"
+dest_files=["res://.godot/imported/peashooter.png-a5a11838cdf2b339dbda8f371f7c1231.ctex"]
 
 [params]
 

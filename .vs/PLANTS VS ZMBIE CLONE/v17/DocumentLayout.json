@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scenes\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Peashooter.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Peashooter.cs",
+              "RelativeDocumentMoniker": "Scripts\\Peashooter.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Peashooter.cs",
+              "RelativeToolTip": "Scripts\\Peashooter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T09:20:59.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scenes\\Projectile.cs",
+              "RelativeDocumentMoniker": "Scenes\\Projectile.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scenes\\Projectile.cs",
+              "RelativeToolTip": "Scenes\\Projectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T09:02:57.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlantData.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\PlantData.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlantData.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\PlantData.cs",
+              "RelativeToolTip": "Scripts\\PlantData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:23:48.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GridManager.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\GridManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GridManager.cs",
               "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\GridManager.cs",
               "RelativeToolTip": "Scripts\\GridManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T18:14:49.389Z",
               "EditorCaption": ""
