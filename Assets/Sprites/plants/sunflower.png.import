@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r1k7rmvjooj"
-path="res://.godot/imported/Wallnut.png-909b09c0b33685ccda00659700c8fdee.ctex"
+uid="uid://d1bxj1nviufcu"
+path="res://.godot/imported/sunflower.png-64bb76bb01dc27813f311a6b81cd0fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Wallnut.png"
-dest_files=["res://.godot/imported/Wallnut.png-909b09c0b33685ccda00659700c8fdee.ctex"]
+source_file="res://Assets/Sprites/plants/sunflower.png"
+dest_files=["res://.godot/imported/sunflower.png-64bb76bb01dc27813f311a6b81cd0fa2.ctex"]
 
 [params]
 

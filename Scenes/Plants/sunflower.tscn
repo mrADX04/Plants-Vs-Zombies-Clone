@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq1nsoy823nhi"]
 
-[ext_resource type="Texture2D" uid="uid://d1bxj1nviufcu" path="res://Assets/Sprites/sunflower.png" id="1_tqto8"]
+[ext_resource type="Texture2D" uid="uid://d1bxj1nviufcu" path="res://Assets/Sprites/plants/sunflower.png" id="1_tqto8"]
 
 [node name="Sunflower" type="Node2D" unique_id=578578951]
 

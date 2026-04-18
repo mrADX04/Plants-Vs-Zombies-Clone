@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4a5g7mddacmt"]
+
+[ext_resource type="PackedScene" uid="uid://btgafk0ylreem" path="res://Scenes/BaseEnemy.tscn" id="1_obpk8"]
+
+[node name="Sheep_Base" unique_id=1535896481 instance=ExtResource("1_obpk8")]
+collision_mask = 0

@@ -82,7 +82,7 @@ public partial class GridManager : Node2D
             return;
         }
 
-        // 1. Instantiate as a Node2D
+        // 2. Instantiate as a Node2D
         Node2D newObject = ObjectToSpawn.Instantiate<Node2D>();
 
         // 3. Set the position to our calculated snap point

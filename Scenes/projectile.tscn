@@ -9,6 +9,7 @@ height = 71.99715
 
 [node name="Projectile" type="Area2D" unique_id=1010719431]
 script = ExtResource("1_yr2qt")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=93505211]
 position = Vector2(0.20000005, 0.256)

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://btgafk0ylreem"]
+
+[ext_resource type="Script" uid="uid://4kducnjatpy2" path="res://Scripts/BaseEnemy.cs" id="1_ku1f7"]
+[ext_resource type="Texture2D" uid="uid://cmer5lgxpj666" path="res://Assets/Sprites/enemies/Sheep1.png" id="1_oxnhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxnhe"]
+size = Vector2(13, 12)
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=1535896481]
+collision_mask = 0
+script = ExtResource("1_ku1f7")
+Speed = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=233218721]
+texture_filter = 1
+texture = ExtResource("1_oxnhe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1388818719]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_oxnhe")

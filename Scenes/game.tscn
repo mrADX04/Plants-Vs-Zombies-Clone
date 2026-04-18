@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cbvdyl8cukdib" path="res://Assets/Tilemap/tilemap.png" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://b7rg8pltsqcin" path="res://Scripts/GridManager.cs" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/peashooter.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://btgafk0ylreem" path="res://Scenes/BaseEnemy.tscn" id="4_3dryh"]
+[ext_resource type="Script" uid="uid://cd6tphp6wil85" path="res://Scripts/EnemySpawner.cs" id="4_wowpa"]
+[ext_resource type="Script" uid="uid://db8mxhre0ro6j" path="res://Scripts/WaveData.cs" id="6_1l0tm"]
+[ext_resource type="Script" uid="uid://uyyvddixynf7" path="res://Scripts/LaneManager.cs" id="6_i6g32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_wrm1d")
@@ -110,6 +114,27 @@ texture = ExtResource("1_wrm1d")
 [sub_resource type="TileSet" id="TileSet_6bp64"]
 sources/0 = SubResource("TileSetAtlasSource_21xkr")
 
+[sub_resource type="Resource" id="Resource_v158k"]
+script = ExtResource("6_1l0tm")
+SpawnInterval = 2.5
+EnemyCount = 5
+MaxSpawnPerTick = 2
+metadata/_custom_type_script = "uid://db8mxhre0ro6j"
+
+[sub_resource type="Resource" id="Resource_h4fw4"]
+script = ExtResource("6_1l0tm")
+SpawnInterval = 1.8
+MinSpawnPerTick = 2
+metadata/_custom_type_script = "uid://db8mxhre0ro6j"
+
+[sub_resource type="Resource" id="Resource_ldgsr"]
+script = ExtResource("6_1l0tm")
+SpawnInterval = 1.0
+EnemyCount = 15
+MinSpawnPerTick = 3
+MaxSpawnPerTick = 5
+metadata/_custom_type_script = "uid://db8mxhre0ro6j"
+
 [node name="Game" type="Node2D" unique_id=1633921174]
 
 [node name="PlayableLayer" type="TileMapLayer" parent="." unique_id=623035823]
@@ -131,3 +156,30 @@ script = ExtResource("2_3dryh")
 CellSize = 16
 GridOffset = Vector2(160, 80)
 ObjectToSpawn = ExtResource("3_wrm1d")
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=1202095374]
+script = ExtResource("4_wowpa")
+EnemyScene = ExtResource("4_3dryh")
+LaneSpawnPoints = Array[NodePath]([NodePath("../LaneSpawnPoints/Lane1"), NodePath("../LaneSpawnPoints/Lane2"), NodePath("../LaneSpawnPoints/Lane3"), NodePath("../LaneSpawnPoints/Lane4"), NodePath("../LaneSpawnPoints/Lane5")])
+Waves = Array[Object]([SubResource("Resource_v158k"), SubResource("Resource_h4fw4"), SubResource("Resource_ldgsr")])
+SpawnInterval = 5.0
+
+[node name="LaneSpawnPoints" type="Node2D" parent="." unique_id=2141046001]
+
+[node name="Lane1" type="Marker2D" parent="LaneSpawnPoints" unique_id=516289695]
+position = Vector2(177, 41)
+
+[node name="Lane2" type="Marker2D" parent="LaneSpawnPoints" unique_id=774450948]
+position = Vector2(177, 57)
+
+[node name="Lane3" type="Marker2D" parent="LaneSpawnPoints" unique_id=1945109997]
+position = Vector2(177, 73)
+
+[node name="Lane4" type="Marker2D" parent="LaneSpawnPoints" unique_id=569561915]
+position = Vector2(177, 89)
+
+[node name="Lane5" type="Marker2D" parent="LaneSpawnPoints" unique_id=900612480]
+position = Vector2(177, 104)
+
+[node name="LaneManager" type="Node" parent="." unique_id=1468480807]
+script = ExtResource("6_i6g32")
