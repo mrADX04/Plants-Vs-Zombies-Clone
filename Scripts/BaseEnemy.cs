@@ -15,6 +15,8 @@ public partial class BaseEnemy : CharacterBody2D
         currentHealth = MaxHealth;
 
         LaneManager.Instance.RegisterEnemy(Lane, this);
+
+        AddToGroup("Enemies");
     }
 
     public override void _ExitTree()
