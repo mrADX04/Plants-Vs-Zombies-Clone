@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b58syc1u816g3"]
+
+[ext_resource type="Script" uid="uid://cnhcyn845nc2s" path="res://Scripts/Peashooter.cs" id="1_33muc"]
+[ext_resource type="PackedScene" uid="uid://bpxg60yvv31ad" path="res://Scenes/projectile.tscn" id="2_6c5ws"]
+[ext_resource type="Texture2D" uid="uid://q6er1xg57enw" path="res://Assets/Sprites/plants/peashooter.png" id="3_rlqy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhtpp"]
+size = Vector2(8, 10)
+
+[node name="Peashooter" type="StaticBody2D" unique_id=2108025310]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_33muc")
+ProjectileScene = ExtResource("2_6c5ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799648940]
+texture_filter = 1
+texture = ExtResource("3_rlqy3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396275703]
+shape = SubResource("RectangleShape2D_mhtpp")
+
+[node name="Timer" type="Timer" parent="." unique_id=651201479]
+wait_time = 3.5
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=1125394098]
+position = Vector2(4, -2)

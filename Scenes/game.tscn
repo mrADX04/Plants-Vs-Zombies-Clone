@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbvdyl8cukdib" path="res://Assets/Tilemap/tilemap.png" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://b7rg8pltsqcin" path="res://Scripts/GridManager.cs" id="2_3dryh"]
-[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/peashooter.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/Plants/peashooter.tscn" id="3_v158k"]
 [ext_resource type="Script" uid="uid://cd6tphp6wil85" path="res://Scripts/EnemySpawner.cs" id="4_wowpa"]
 [ext_resource type="PackedScene" uid="uid://b4a5g7mddacmt" path="res://Scenes/Sheeps/sheep_base.tscn" id="5_v158k"]
 [ext_resource type="Script" uid="uid://db8mxhre0ro6j" path="res://Scripts/WaveData.cs" id="6_1l0tm"]
@@ -156,7 +156,7 @@ position = Vector2(-128, -48)
 script = ExtResource("2_3dryh")
 CellSize = 16
 GridOffset = Vector2(160, 80)
-ObjectToSpawn = ExtResource("3_wrm1d")
+ObjectToSpawn = ExtResource("3_v158k")
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=1202095374]
 script = ExtResource("4_wowpa")

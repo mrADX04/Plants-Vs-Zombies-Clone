@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c8exburfb2h6b"]
+
+[ext_resource type="Script" uid="uid://djq4tye8jkjrp" path="res://Scripts/BasePlant.cs" id="1_2pw2v"]
+[ext_resource type="Texture2D" uid="uid://c7u7spqsq5cc4" path="res://Assets/Sprites/plants/BasePlant.png" id="2_po4w1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_necqm"]
+size = Vector2(16, 14)
+
+[node name="BasePlant" type="StaticBody2D" unique_id=1528806343]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_2pw2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1250288537]
+texture_filter = 1
+texture = ExtResource("2_po4w1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1618153307]
+shape = SubResource("RectangleShape2D_necqm")

@@ -5,22 +5,22 @@ public partial class LaneManager : Node
 {
     public static LaneManager Instance;
 
-    private Dictionary<int, List<Node2D>> lanes = new();
+    private Dictionary<int, List<BaseEnemy>> lanes = new();
 
     public override void _Ready()
     {
         Instance = this;
     }
 
-    public void RegisterEnemy(int lane, Node2D enemy)
+    public void RegisterEnemy(int lane, BaseEnemy enemy)
     {
         if (!lanes.ContainsKey(lane))
-            lanes[lane] = new List<Node2D>();
+            lanes[lane] = new List<BaseEnemy>();
 
         lanes[lane].Add(enemy);
     }
 
-    public void UnregisterEnemy(int lane, Node2D enemy)
+    public void UnregisterEnemy(int lane, BaseEnemy enemy)
     {
         if (lanes.ContainsKey(lane))
             lanes[lane].Remove(enemy);
@@ -33,6 +33,8 @@ public partial class LaneManager : Node
 
         foreach (var enemy in lanes[lane])
         {
+            if (enemy == null) continue;
+
             if (enemy.GlobalPosition.X > plantX)
                 return true;
         }

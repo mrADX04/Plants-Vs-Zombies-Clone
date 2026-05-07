@@ -27,6 +27,12 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Plants vs Zmbie Clone"
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Plants"
+2d_physics/layer_3="Enemies"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

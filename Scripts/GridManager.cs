@@ -11,6 +11,15 @@ public partial class GridManager : Node2D
     private const int GridWidth = 9;
     private const int GridHeight = 5;
 
+    // ❗ NEW: Track which object is in each cell instead of just bool
+    private Node2D[,] gridObjects;
+
+    public override void _Ready()
+    {
+        // ❗ NEW: Initialize grid storage
+        gridObjects = new Node2D[GridWidth, GridHeight];
+    }
+
     public override void _Process(double delta)
     {
         // If in editor, redraw constantly so you can see the offset change live
@@ -36,6 +45,13 @@ public partial class GridManager : Node2D
             // 3. Check Bounds
             if (x >= 0 && x < GridWidth && y >= 0 && y < GridHeight)
             {
+                // ❗ NEW: Check if this cell is already occupied
+                if (gridObjects[x, y] != null)
+                {
+                    GD.Print("Cell already occupied!");
+                    return;
+                }
+
                 // 4. Calculate the Top-Left of the specific cell
                 float cellX = GridOffset.X + (x * CellSize);
                 float cellY = GridOffset.Y + (y * CellSize);
@@ -44,9 +60,19 @@ public partial class GridManager : Node2D
                 Vector2 snapPos = new Vector2(
                     cellX + (CellSize / 2.0f),
                     cellY + (CellSize / 2.0f)
-                    );
+                );
 
-                SpawnAt(snapPos);
+                // ❗ UPDATED: store the returned object
+                Node2D placed = SpawnAt(snapPos);
+
+                // ❗ NEW: store reference in grid
+                gridObjects[x, y] = placed;
+
+                // ❗ NEW: assign grid position to plant (for auto-free later)
+                if (placed is BasePlant plant)
+                {
+                    plant.SetGridPosition(x, y, this);
+                }
             }
         }
     }
@@ -72,14 +98,15 @@ public partial class GridManager : Node2D
         }
     }
 
-    private void SpawnAt(Vector2 pos)
+    private Node2D SpawnAt(Vector2 pos)
     {
         GD.Print("Spawning at: " + pos);
+
         // 1. Safety check: make sure you've assigned something in the Inspector
         if (ObjectToSpawn == null)
         {
             GD.PrintErr("Error: ObjectToSpawn is not assigned in the Inspector!");
-            return;
+            return null;
         }
 
         // 2. Instantiate as a Node2D
@@ -93,5 +120,17 @@ public partial class GridManager : Node2D
 
         GD.Print("Successfully spawned at: " + pos);
 
+        // ❗ NEW: return object so we can track it
+        return newObject;
+    }
+
+    // ❗ NEW: Called by plants when they die
+    public void FreeCell(int x, int y)
+    {
+        if (x >= 0 && x < GridWidth && y >= 0 && y < GridHeight)
+        {
+            gridObjects[x, y] = null;
+            GD.Print($"Freed cell: {x}, {y}");
+        }
     }
 }

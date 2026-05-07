@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxnhe"]
 size = Vector2(13, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6epgf"]
+size = Vector2(2, 12)
+
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=1535896481]
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_ku1f7")
 Speed = 10.0
@@ -18,3 +22,15 @@ texture = ExtResource("1_oxnhe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1388818719]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_oxnhe")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=717951236]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1307493316]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_6epgf")
+debug_color = Color(0.9919253, 0, 0.2652532, 0.41960785)
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

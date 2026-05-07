@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Peashooter : Node2D
+public partial class Peashooter : BasePlant
 {
     [Export] public PackedScene ProjectileScene;
 
@@ -10,6 +10,7 @@ public partial class Peashooter : Node2D
 
     public override void _Ready()
     {
+        base._Ready(); // Call base method to run _Ready() logic from BasePlant
         shootTimer = GetNode<Timer>("Timer");
         shootTimer.Timeout += OnShoot;
         shootPoint = GetNode<Marker2D>("ShootPoint");
