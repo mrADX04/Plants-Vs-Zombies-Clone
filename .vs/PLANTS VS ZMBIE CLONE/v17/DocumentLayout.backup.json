@@ -3,40 +3,52 @@
   "WorkspaceRootPath": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\baseplant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\baseplant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sunflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sunflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sunmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sunmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\lanemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\lanemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\plantselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\plantselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\peashooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\baseplant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\baseplant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,48 +58,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SunManager.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\SunManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\SunManager.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\SunManager.cs",
+              "RelativeToolTip": "Scripts\\SunManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T06:02:03.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sun.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sun.cs",
+              "RelativeDocumentMoniker": "Scripts\\Sun.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sun.cs",
+              "RelativeToolTip": "Scripts\\Sun.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowEUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T05:49:54.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Sunflower.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sunflower.cs",
+              "RelativeDocumentMoniker": "Scripts\\Sunflower.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sunflower.cs",
+              "RelativeToolTip": "Scripts\\Sunflower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T05:19:16.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlantSelector.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\PlantSelector.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlantSelector.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\PlantSelector.cs",
+              "RelativeToolTip": "Scripts\\PlantSelector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T05:21:03.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\UIManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\UIManager.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\UIManager.cs",
+              "RelativeToolTip": "Scripts\\UIManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T17:48:24.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "BasePlant.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BasePlant.cs",
               "RelativeDocumentMoniker": "Scripts\\BasePlant.cs",
               "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BasePlant.cs",
               "RelativeToolTip": "Scripts\\BasePlant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T02:40:12.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T02:40:12.143Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Projectile.cs",
-              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Projectile.cs",
-              "RelativeDocumentMoniker": "Scripts\\Projectile.cs",
-              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Projectile.cs",
-              "RelativeToolTip": "Scripts\\Projectile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABgAAAAAAAAAA==",
+              "Title": "BaseEnemy.cs",
+              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BaseEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\BaseEnemy.cs",
+              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BaseEnemy.cs",
+              "RelativeToolTip": "Scripts\\BaseEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T08:51:29.494Z"
+              "WhenOpened": "2026-04-10T17:59:47.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LaneManager.cs",
-              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\LaneManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\LaneManager.cs",
-              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\LaneManager.cs",
-              "RelativeToolTip": "Scripts\\LaneManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T08:48:00.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "WaveData.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\WaveData.cs",
               "RelativeDocumentMoniker": "Scripts\\WaveData.cs",
@@ -99,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Scripts\\EnemySpawner.cs",
@@ -107,37 +168,23 @@
               "RelativeToolTip": "Scripts\\EnemySpawner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T18:03:33.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T18:03:33.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BaseEnemy.cs",
-              "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BaseEnemy.cs",
-              "RelativeDocumentMoniker": "Scripts\\BaseEnemy.cs",
-              "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\BaseEnemy.cs",
-              "RelativeToolTip": "Scripts\\BaseEnemy.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T17:59:47.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Peashooter.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Peashooter.cs",
               "RelativeDocumentMoniker": "Scripts\\Peashooter.cs",
               "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Peashooter.cs",
               "RelativeToolTip": "Scripts\\Peashooter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T09:20:59.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T09:20:59.284Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "PlantData.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\PlantData.cs",
               "RelativeDocumentMoniker": "Scripts\\PlantData.cs",
@@ -145,18 +192,17 @@
               "RelativeToolTip": "Scripts\\PlantData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T14:23:48.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T14:23:48.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "GridManager.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\GridManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GridManager.cs",
               "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\GridManager.cs",
               "RelativeToolTip": "Scripts\\GridManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwFgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T18:14:49.389Z"
             }

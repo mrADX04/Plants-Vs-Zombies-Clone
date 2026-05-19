@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b5pktht727lfl"]
 
-[ext_resource type="PackedScene" uid="uid://btgafk0ylreem" path="res://Scenes/BaseEnemy.tscn" id="1_1kukn"]
+[ext_resource type="PackedScene" uid="uid://btgafk0ylreem" path="res://Scenes/Sheeps/BaseEnemy.tscn" id="1_1kukn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kukn"]
 load_path = "res://.godot/imported/Sheep2.png-30f29c935deceeb8d607cb8ddbdce062.ctex"
 
 [node name="sheep_tank" unique_id=1535896481 instance=ExtResource("1_1kukn")]
-collision_mask = 0
+MaxHealth = 500
 
 [node name="Sprite2D" parent="." index="0" unique_id=233218721]
 texture = SubResource("CompressedTexture2D_1kukn")

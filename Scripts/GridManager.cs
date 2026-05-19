@@ -4,77 +4,33 @@ using System;
 [Tool] // This allows the grid to update visually in the Inspector
 public partial class GridManager : Node2D
 {
-    [Export] public int CellSize = 64;
+    [Export] public int CellSize = 16;
     [Export] public Vector2 GridOffset = new Vector2(0, 0); // Change this in Inspector!
-    [Export] PackedScene ObjectToSpawn;
+
+    public static GridManager Instance;
 
     private const int GridWidth = 9;
     private const int GridHeight = 5;
 
-    // ❗ NEW: Track which object is in each cell instead of just bool
+    // ❗ Track which object is in each cell
     private Node2D[,] gridObjects;
+    // ❗ NEW: Dedicated occupancy grid
+    private bool[,] occupiedCells;
 
     public override void _Ready()
     {
-        // ❗ NEW: Initialize grid storage
         gridObjects = new Node2D[GridWidth, GridHeight];
+
+        occupiedCells = new bool[GridWidth, GridHeight];
+
+        Instance = this;
     }
 
     public override void _Process(double delta)
     {
         // If in editor, redraw constantly so you can see the offset change live
-        if (Engine.IsEditorHint()) QueueRedraw();
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        // Don't run click logic in the editor
-        if (Engine.IsEditorHint()) return;
-
-        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left)
-        {
-            // 1. Get Mouse relative to the Node
-            Vector2 localMouse = GetLocalMousePosition();
-
-            // 2. Subtract the Offset to find the "Grid Space"
-            Vector2 gridSpacePos = localMouse - GridOffset;
-
-            int x = (int)Mathf.Floor(gridSpacePos.X / CellSize);
-            int y = (int)Mathf.Floor(gridSpacePos.Y / CellSize);
-
-            // 3. Check Bounds
-            if (x >= 0 && x < GridWidth && y >= 0 && y < GridHeight)
-            {
-                // ❗ NEW: Check if this cell is already occupied
-                if (gridObjects[x, y] != null)
-                {
-                    GD.Print("Cell already occupied!");
-                    return;
-                }
-
-                // 4. Calculate the Top-Left of the specific cell
-                float cellX = GridOffset.X + (x * CellSize);
-                float cellY = GridOffset.Y + (y * CellSize);
-
-                // 5. Add half the cell size to reach the center of that cell
-                Vector2 snapPos = new Vector2(
-                    cellX + (CellSize / 2.0f),
-                    cellY + (CellSize / 2.0f)
-                );
-
-                // ❗ UPDATED: store the returned object
-                Node2D placed = SpawnAt(snapPos);
-
-                // ❗ NEW: store reference in grid
-                gridObjects[x, y] = placed;
-
-                // ❗ NEW: assign grid position to plant (for auto-free later)
-                if (placed is BasePlant plant)
-                {
-                    plant.SetGridPosition(x, y, this);
-                }
-            }
-        }
+        if (Engine.IsEditorHint())
+            QueueRedraw();
     }
 
     public override void _Draw()
@@ -83,54 +39,132 @@ public partial class GridManager : Node2D
         float totalH = GridHeight * CellSize;
 
         // DRAWING USES THE OFFSET
+
         // Draw Vertical Lines
         for (int i = 0; i <= GridWidth; i++)
         {
             float x = GridOffset.X + (i * CellSize);
-            DrawLine(new Vector2(x, GridOffset.Y), new Vector2(x, GridOffset.Y + totalH), Colors.Green, 1.0f);
+
+            DrawLine(
+                new Vector2(x, GridOffset.Y),
+                new Vector2(x, GridOffset.Y + totalH),
+                Colors.Green,
+                1.0f
+            );
         }
 
         // Draw Horizontal Lines
         for (int j = 0; j <= GridHeight; j++)
         {
             float y = GridOffset.Y + (j * CellSize);
-            DrawLine(new Vector2(GridOffset.X, y), new Vector2(GridOffset.X + totalW, y), Colors.Green, 1.0f);
+
+            DrawLine(
+                new Vector2(GridOffset.X, y),
+                new Vector2(GridOffset.X + totalW, y),
+                Colors.Green,
+                1.0f
+            );
         }
     }
 
-    private Node2D SpawnAt(Vector2 pos)
+    // ❗ Convert world position into snapped WORLD position
+    public Vector2 GetSnappedPosition(Vector2 worldPos)
     {
-        GD.Print("Spawning at: " + pos);
+        // Convert world mouse position into GridManager local space
+        Vector2 localPos = ToLocal(worldPos);
 
-        // 1. Safety check: make sure you've assigned something in the Inspector
-        if (ObjectToSpawn == null)
-        {
-            GD.PrintErr("Error: ObjectToSpawn is not assigned in the Inspector!");
-            return null;
-        }
+        Vector2 gridSpacePos = localPos - GridOffset;
 
-        // 2. Instantiate as a Node2D
-        Node2D newObject = ObjectToSpawn.Instantiate<Node2D>();
+        int col = Mathf.FloorToInt(gridSpacePos.X / CellSize);
+        int row = Mathf.FloorToInt(gridSpacePos.Y / CellSize);
 
-        // 3. Set the position to our calculated snap point
-        newObject.Position = pos;
+        // Convert snapped LOCAL position
+        Vector2 snappedLocalPos = new Vector2(
+            GridOffset.X + (col * CellSize) + (CellSize / 2.0f),
+            GridOffset.Y + (row * CellSize) + (CellSize / 2.0f)
+        );
 
-        // 4. Add it as a child of the GridManager
-        AddChild(newObject);
-
-        GD.Print("Successfully spawned at: " + pos);
-
-        // ❗ NEW: return object so we can track it
-        return newObject;
+        // ❗ Convert back into WORLD coordinates
+        return ToGlobal(snappedLocalPos);
     }
 
-    // ❗ NEW: Called by plants when they die
+    // ❗ Convert world position into grid coordinates
+    public Vector2I GetGridCoordinates(Vector2 worldPos)
+    {
+        // Convert world mouse position into GridManager local space
+        Vector2 localPos = ToLocal(worldPos);
+
+        Vector2 gridSpacePos = localPos - GridOffset;
+
+        int col = Mathf.FloorToInt(gridSpacePos.X / CellSize);
+        int row = Mathf.FloorToInt(gridSpacePos.Y / CellSize);
+
+        return new Vector2I(col, row);
+    }
+
+    // ❗ Check if position is inside the playable lawn
+    public bool IsInsideGrid(Vector2 worldPos)
+    {
+        Vector2 localPos = ToLocal(worldPos);
+
+        float left = GridOffset.X;
+        float top = GridOffset.Y;
+
+        float right = left + (GridWidth * CellSize);
+        float bottom = top + (GridHeight * CellSize);
+
+        return localPos.X >= left &&
+               localPos.X < right &&
+               localPos.Y >= top &&
+               localPos.Y < bottom;
+    }
+
+    // ❗ Check if a grid cell is free
+    public bool IsCellFree(int col, int row)
+    {
+        // Bounds safety
+        if (col < 0 || col >= GridWidth ||
+            row < 0 || row >= GridHeight)
+        {
+            return false;
+        }
+
+        return !occupiedCells[col, row];
+    }
+
+    // ❗ Occupy a specific grid cell
+    public void OccupyCell(int col, int row, Node2D plant)
+    {
+        // Safety bounds check
+        if (col < 0 || col >= GridWidth ||
+            row < 0 || row >= GridHeight)
+        {
+            GD.PrintErr("Tried to occupy invalid grid cell!");
+            return;
+        }
+        occupiedCells[col, row] = true;
+
+        gridObjects[col, row] = plant;
+
+        // ❗ Assign grid position to BasePlant
+        if (plant is BasePlant basePlant)
+        {
+            basePlant.SetGridPosition(col, row, this);
+        }
+    }
+
+    // ❗ Called by plants when destroyed
     public void FreeCell(int x, int y)
     {
-        if (x >= 0 && x < GridWidth && y >= 0 && y < GridHeight)
+        if (x >= 0 && x < GridWidth &&
+            y >= 0 && y < GridHeight)
         {
+            occupiedCells[x, y] = false;
+
             gridObjects[x, y] = null;
+
             GD.Print($"Freed cell: {x}, {y}");
         }
     }
+
 }

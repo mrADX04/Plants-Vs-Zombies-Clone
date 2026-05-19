@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://bq1nsoy823nhi"]
 
 [ext_resource type="Texture2D" uid="uid://d1bxj1nviufcu" path="res://Assets/Sprites/plants/sunflower.png" id="1_tqto8"]
+[ext_resource type="Script" uid="uid://dwcofigpuugph" path="res://Scripts/Sunflower.cs" id="1_us7vw"]
+[ext_resource type="PackedScene" uid="uid://3kul5bie4oyl" path="res://Scenes/sun.tscn" id="2_ba34s"]
 
-[node name="Sunflower" type="Node2D" unique_id=578578951]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhtpp"]
+size = Vector2(8, 10)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=299755970]
+[node name="Sunflower" type="StaticBody2D" unique_id=2108025310]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_us7vw")
+SunScene = ExtResource("2_ba34s")
+SunSpawnInterval = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799648940]
 texture_filter = 1
 texture = ExtResource("1_tqto8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396275703]
+shape = SubResource("RectangleShape2D_mhtpp")
+
+[node name="Timer" type="Timer" parent="." unique_id=651201479]
+wait_time = 3.5

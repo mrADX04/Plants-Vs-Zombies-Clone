@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cbvdyl8cukdib" path="res://Assets/Tilemap/tilemap.png" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://b7rg8pltsqcin" path="res://Scripts/GridManager.cs" id="2_3dryh"]
-[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/Plants/peashooter.tscn" id="3_v158k"]
+[ext_resource type="PackedScene" uid="uid://blpycouysoliu" path="res://Scenes/plant_selector.tscn" id="4_rku1e"]
 [ext_resource type="Script" uid="uid://cd6tphp6wil85" path="res://Scripts/EnemySpawner.cs" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bswtbc1mh2m0c" path="res://Scenes/ui_manager.tscn" id="5_rfjv2"]
 [ext_resource type="PackedScene" uid="uid://b4a5g7mddacmt" path="res://Scenes/Sheeps/sheep_base.tscn" id="5_v158k"]
 [ext_resource type="Script" uid="uid://db8mxhre0ro6j" path="res://Scripts/WaveData.cs" id="6_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://b5pktht727lfl" path="res://Scenes/Sheeps/sheep_tank.tscn" id="6_h4fw4"]
 [ext_resource type="Script" uid="uid://uyyvddixynf7" path="res://Scripts/LaneManager.cs" id="6_i6g32"]
+[ext_resource type="Script" uid="uid://d4agxihthmnsx" path="res://Scripts/PlantGhost.cs" id="7_nb51f"]
+[ext_resource type="Script" uid="uid://cthbux6f41jpn" path="res://Scripts/SunManager.cs" id="12_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_wrm1d")
@@ -141,7 +144,7 @@ metadata/_custom_type_script = "uid://db8mxhre0ro6j"
 [node name="PlayableLayer" type="TileMapLayer" parent="." unique_id=623035823]
 texture_filter = 1
 position = Vector2(-128, -48)
-tile_map_data = PackedByteArray("AAAKAAUAAAACAAIAAAAKAAYAAAACAAMAAAAKAAcAAAACAAQAAAAKAAgAAAACAAUAAAAKAAkAAAACAAYAAAALAAUAAAADAAIAAAALAAYAAAADAAMAAAALAAcAAAADAAQAAAALAAgAAAADAAUAAAALAAkAAAADAAYAAAAMAAUAAAAEAAIAAAAMAAYAAAAEAAMAAAAMAAcAAAAEAAQAAAAMAAgAAAAEAAUAAAAMAAkAAAAEAAYAAAANAAUAAAAFAAIAAAANAAYAAAAFAAMAAAANAAcAAAAFAAQAAAANAAgAAAAFAAUAAAANAAkAAAAFAAYAAAAOAAUAAAAGAAIAAAAOAAYAAAAGAAMAAAAOAAcAAAAGAAQAAAAOAAgAAAAGAAUAAAAOAAkAAAAGAAYAAAAPAAUAAAAHAAIAAAAPAAYAAAAHAAMAAAAPAAcAAAAHAAQAAAAPAAgAAAAHAAUAAAAPAAkAAAAHAAYAAAAQAAUAAAAIAAIAAAAQAAYAAAAIAAMAAAAQAAcAAAAIAAQAAAAQAAgAAAAIAAUAAAAQAAkAAAAIAAYAAAARAAUAAAAJAAIAAAARAAYAAAAJAAMAAAARAAcAAAAJAAQAAAARAAgAAAAJAAUAAAARAAkAAAAJAAYAAAASAAUAAAAKAAIAAAASAAYAAAAKAAMAAAASAAcAAAAKAAQAAAASAAgAAAAKAAUAAAASAAkAAAAKAAYAAAA=")
+tile_map_data = PackedByteArray("AAAKAAUAAAADAAMAAAAKAAYAAAADAAQAAAAKAAcAAAADAAMAAAAKAAgAAAADAAQAAAAKAAkAAAACAAYAAAALAAUAAAAEAAMAAAALAAYAAAAEAAQAAAALAAcAAAAEAAMAAAALAAgAAAAEAAQAAAALAAkAAAADAAYAAAAMAAUAAAAEAAIAAAAMAAYAAAAEAAMAAAAMAAcAAAAEAAQAAAAMAAgAAAAEAAUAAAAMAAkAAAAEAAYAAAANAAUAAAAFAAIAAAANAAYAAAAFAAMAAAANAAcAAAAFAAQAAAANAAgAAAAFAAUAAAANAAkAAAAFAAYAAAAOAAUAAAAGAAIAAAAOAAYAAAAGAAMAAAAOAAcAAAAGAAQAAAAOAAgAAAAGAAUAAAAOAAkAAAAGAAYAAAAPAAUAAAAHAAIAAAAPAAYAAAADAAMAAAAPAAcAAAADAAQAAAAPAAgAAAAHAAUAAAAPAAkAAAAHAAYAAAAQAAUAAAAIAAIAAAAQAAYAAAAEAAMAAAAQAAcAAAAEAAQAAAAQAAgAAAAIAAUAAAAQAAkAAAAIAAYAAAARAAUAAAAJAAIAAAARAAYAAAAJAAMAAAARAAcAAAAJAAQAAAARAAgAAAAJAAUAAAARAAkAAAAJAAYAAAASAAUAAAAKAAIAAAASAAYAAAAKAAMAAAASAAcAAAAKAAQAAAASAAgAAAAKAAUAAAASAAkAAAAKAAYAAAA=")
 tile_set = SubResource("TileSet_kry3j")
 
 [node name="EnemySpawnLayer" type="TileMapLayer" parent="." unique_id=1571580587]
@@ -154,9 +157,19 @@ tile_set = SubResource("TileSet_6bp64")
 [node name="GridManager" type="Node2D" parent="." unique_id=2031252140]
 position = Vector2(-128, -48)
 script = ExtResource("2_3dryh")
-CellSize = 16
 GridOffset = Vector2(160, 80)
-ObjectToSpawn = ExtResource("3_v158k")
+
+[node name="PlantSelector" parent="." unique_id=282544782 instance=ExtResource("4_rku1e")]
+
+[node name="SunManager" type="Node" parent="." unique_id=1428285427]
+script = ExtResource("12_rku1e")
+
+[node name="UIManager" parent="." unique_id=1170028410 instance=ExtResource("5_rfjv2")]
+
+[node name="PlantGhost" type="Node2D" parent="." unique_id=1600058206 node_paths=PackedStringArray("PlayableLayer")]
+texture_filter = 1
+script = ExtResource("7_nb51f")
+PlayableLayer = NodePath("../PlayableLayer")
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=1202095374]
 script = ExtResource("4_wowpa")

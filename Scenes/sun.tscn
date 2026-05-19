@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3kul5bie4oyl"]
+
+[ext_resource type="Script" uid="uid://cjlrxtad8hbfg" path="res://Scripts/Sun.cs" id="1_hvbg4"]
+[ext_resource type="Texture2D" uid="uid://bninghql0ytbx" path="res://Assets/Sprites/Sun_hovered.png" id="2_hw71r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh0p3"]
+size = Vector2(5, 5)
+
+[node name="Sun" type="Area2D" unique_id=199675936]
+script = ExtResource("1_hvbg4")
+MoveSpeed = 250.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=952533392]
+texture_filter = 1
+texture = ExtResource("2_hw71r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460069429]
+position = Vector2(4.5, 2.5)
+shape = SubResource("RectangleShape2D_qh0p3")

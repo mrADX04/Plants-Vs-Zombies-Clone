@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bswtbc1mh2m0c"]
+
+[ext_resource type="Script" uid="uid://clr62bkmcd122" path="res://Scripts/UIManager.cs" id="1_i37jq"]
+[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/Plants/peashooter.tscn" id="2_cl1wc"]
+[ext_resource type="Texture2D" uid="uid://cqmn6tetyhhn" path="res://Assets/Sprites/TopBar_Background.png" id="2_i37jq"]
+[ext_resource type="Texture2D" uid="uid://qbfsef6ruqwb" path="res://Assets/Sprites/Cards/peashooter_card.png" id="2_laqw3"]
+[ext_resource type="PackedScene" uid="uid://bq1nsoy823nhi" path="res://Scenes/Plants/sunflower.tscn" id="3_2o30e"]
+[ext_resource type="Texture2D" uid="uid://bjpiqunpr4xnk" path="res://Assets/Sprites/Cards/peashooter_card_pressed.png" id="3_k436y"]
+[ext_resource type="Texture2D" uid="uid://csrb2umfocguc" path="res://Assets/Sprites/SunIcon.png" id="3_laqw3"]
+[ext_resource type="FontFile" uid="uid://ncd7ohsjc7uh" path="res://Assets/Font/PublicPixel-rv0pA.ttf" id="4_k436y"]
+[ext_resource type="Texture2D" uid="uid://n2tfeeaqh3yw" path="res://Assets/Sprites/Cards/peashooter_card_hover.png" id="4_wcp00"]
+[ext_resource type="Texture2D" uid="uid://bi0nefst7mbpt" path="res://Assets/Sprites/Cards/Sunflower_card.png" id="5_irgxn"]
+[ext_resource type="Texture2D" uid="uid://cx6fkgrbxrjhv" path="res://Assets/Sprites/Cards/Sunflower_card_pressed.png" id="6_4eo48"]
+[ext_resource type="Texture2D" uid="uid://d27ye4ge6rnvv" path="res://Assets/Sprites/Cards/Sunflower_card_hover.png" id="7_02now"]
+[ext_resource type="Texture2D" uid="uid://blf1cfijqj1g1" path="res://Assets/Sprites/Cards/Wallnut_card.png" id="11_gvaor"]
+[ext_resource type="Texture2D" uid="uid://bnnmxhanrottb" path="res://Assets/Sprites/Cards/Wallnut_card_pressed.png" id="12_mgq08"]
+[ext_resource type="Texture2D" uid="uid://bmahsvjsnf4lx" path="res://Assets/Sprites/Cards/Wallnut_card_hover.png" id="13_xvsgm"]
+[ext_resource type="Texture2D" uid="uid://nkmgtw1ablue" path="res://Assets/Sprites/shovel.png" id="14_khpyi"]
+[ext_resource type="Texture2D" uid="uid://d0wqxl7souw4b" path="res://Assets/Sprites/shovel_pressed.png" id="15_cl1wc"]
+[ext_resource type="Texture2D" uid="uid://datwao00mbkiw" path="res://Assets/Sprites/shovel_hover.png" id="16_2o30e"]
+[ext_resource type="Texture2D" uid="uid://bb2usorgrh4x1" path="res://Assets/Sprites/SettingsIcon.png" id="17_xmyfn"]
+[ext_resource type="Texture2D" uid="uid://laonbu5x43x7" path="res://Assets/Sprites/SettingsIcon_pressed.png" id="18_pybxw"]
+[ext_resource type="Texture2D" uid="uid://c3cb4430rt4i5" path="res://Assets/Sprites/SettingsIcon_hover.png" id="19_tfdfk"]
+
+[node name="UIManager" type="CanvasLayer" unique_id=1170028410]
+script = ExtResource("1_i37jq")
+PeashooterScene = ExtResource("2_cl1wc")
+SunflowerScene = ExtResource("3_2o30e")
+
+[node name="TopBar" type="Control" parent="." unique_id=1736046248]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="Background" type="TextureRect" parent="TopBar" unique_id=2074268010]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i37jq")
+
+[node name="SunCounter" type="Control" parent="TopBar" unique_id=366780804]
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="SunIcon" type="TextureRect" parent="TopBar/SunCounter" unique_id=1159894830]
+texture_filter = 1
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_laqw3")
+
+[node name="SunLabel" type="Label" parent="TopBar/SunCounter" unique_id=1313305022]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 14.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("4_k436y")
+theme_override_font_sizes/font_size = 4
+text = "100"
+horizontal_alignment = 1
+
+[node name="CardContainer" type="HBoxContainer" parent="TopBar" unique_id=214822883]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 174.0
+offset_bottom = 15.0
+
+[node name="SunflowerCard" type="TextureButton" parent="TopBar/CardContainer" unique_id=848717767]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("5_irgxn")
+texture_pressed = ExtResource("6_4eo48")
+texture_hover = ExtResource("7_02now")
+
+[node name="PeashooterCard" type="TextureButton" parent="TopBar/CardContainer" unique_id=2656324]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("2_laqw3")
+texture_pressed = ExtResource("3_k436y")
+texture_hover = ExtResource("4_wcp00")
+
+[node name="WallnutCard" type="TextureButton" parent="TopBar/CardContainer" unique_id=1034688881]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("11_gvaor")
+texture_pressed = ExtResource("12_mgq08")
+texture_hover = ExtResource("13_xvsgm")
+
+[node name="ShovelButton" type="TextureButton" parent="TopBar" unique_id=401703815]
+texture_filter = 1
+layout_mode = 0
+offset_left = 177.0
+offset_top = 1.0
+offset_right = 191.0
+offset_bottom = 15.0
+texture_normal = ExtResource("14_khpyi")
+texture_pressed = ExtResource("15_cl1wc")
+texture_hover = ExtResource("16_2o30e")
+
+[node name="SettingsButton" type="TextureButton" parent="TopBar" unique_id=132940520]
+texture_filter = 1
+layout_mode = 0
+offset_left = 192.0
+offset_right = 208.0
+offset_bottom = 16.0
+texture_normal = ExtResource("17_xmyfn")
+texture_pressed = ExtResource("18_pybxw")
+texture_hover = ExtResource("19_tfdfk")
