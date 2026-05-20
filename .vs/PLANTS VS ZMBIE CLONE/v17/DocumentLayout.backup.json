@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sunflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sunflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|solutionrelative:scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A0C0D7E-E9CA-4BC1-9960-97EF5F582DFF}|Plants vs Zmbie Clone.csproj|e:\\projects\\godot\\plants-vs-zmbie-clone\\scripts\\sunmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Sun.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sun.cs",
               "RelativeDocumentMoniker": "Scripts\\Sun.cs",
@@ -87,13 +87,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Sunflower.cs",
               "DocumentMoniker": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sunflower.cs",
               "RelativeDocumentMoniker": "Scripts\\Sunflower.cs",
               "ToolTip": "E:\\Projects\\Godot\\plants-vs-zmbie-clone\\Scripts\\Sunflower.cs",
               "RelativeToolTip": "Scripts\\Sunflower.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T05:19:16.06Z",
               "EditorCaption": ""

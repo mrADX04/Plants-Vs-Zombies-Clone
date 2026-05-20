@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://brndcsj0cgmbo"]
+
+[ext_resource type="Script" uid="uid://p1evysnreac7" path="res://Scripts/Wallnut.cs" id="1_imtc1"]
+[ext_resource type="Texture2D" uid="uid://ct24eks5s1xt8" path="res://Assets/Sprites/plants/wallnut.png" id="2_0m0sl"]
+[ext_resource type="Texture2D" uid="uid://cj4glunpkdric" path="res://Assets/Sprites/plants/wallnut_damaged.png" id="3_elleg"]
+[ext_resource type="Texture2D" uid="uid://bbsill4o8x6la" path="res://Assets/Sprites/plants/wallnut_crit.png" id="4_xipb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhtpp"]
+size = Vector2(8, 10)
+
+[node name="Wallnut" type="StaticBody2D" unique_id=2108025310]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_imtc1")
+FullHealthTexture = ExtResource("2_0m0sl")
+DamagedTexture = ExtResource("3_elleg")
+CriticalTexture = ExtResource("4_xipb5")
+MaxHealth = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799648940]
+texture_filter = 1
+texture = ExtResource("2_0m0sl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396275703]
+shape = SubResource("RectangleShape2D_mhtpp")

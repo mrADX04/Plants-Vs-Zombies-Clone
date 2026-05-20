@@ -5,6 +5,7 @@ public partial class UIManager : CanvasLayer
 {
     [Export] public PackedScene PeashooterScene;
     [Export] public PackedScene SunflowerScene;
+    [Export] public PackedScene WallnutScene;
 
     private Label sunLabel;
 
@@ -22,7 +23,6 @@ public partial class UIManager : CanvasLayer
             SunManager.Instance.SunChanged += UpdateSunCounter;
         }
 
-        SunManager.Instance.SunChanged += UpdateSunCounter;
 
         var peashooterButton =
             GetNode<TextureButton>(
@@ -37,6 +37,13 @@ public partial class UIManager : CanvasLayer
             );
 
         sunflowerButton.Pressed += OnSunflowerButtonPressed;
+
+        var wallnutButton =
+            GetNode<TextureButton>(
+                "TopBar/CardContainer/WallnutCard"
+            );
+
+        wallnutButton.Pressed += OnWallnutButtonPressed;
     }
 
     private void OnPeashooterButtonPressed()
@@ -47,6 +54,11 @@ public partial class UIManager : CanvasLayer
     private void OnSunflowerButtonPressed()
     {
         PlantSelector.Instance.SelectPlant(SunflowerScene);
+    }
+
+    private void OnWallnutButtonPressed()
+    {
+        PlantSelector.Instance.SelectPlant(WallnutScene);
     }
     private void UpdateSunCounter(int amount)
     {

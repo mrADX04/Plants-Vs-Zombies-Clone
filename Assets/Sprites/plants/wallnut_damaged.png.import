@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct24eks5s1xt8"
-path="res://.godot/imported/wallnut.png-0d978b9bdfd5142ae9e071217220f126.ctex"
+uid="uid://cj4glunpkdric"
+path="res://.godot/imported/wallnut_damaged.png-bc5b12f47a7eab323ea46943ff8e0c32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/plants/wallnut.png"
-dest_files=["res://.godot/imported/wallnut.png-0d978b9bdfd5142ae9e071217220f126.ctex"]
+source_file="res://Assets/Sprites/plants/wallnut_damaged.png"
+dest_files=["res://.godot/imported/wallnut_damaged.png-bc5b12f47a7eab323ea46943ff8e0c32.ctex"]
 
 [params]
 
