@@ -12,7 +12,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_us7vw")
 SunScene = ExtResource("2_ba34s")
-SunSpawnInterval = 1.0
+SunCost = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=799648940]
 texture_filter = 1

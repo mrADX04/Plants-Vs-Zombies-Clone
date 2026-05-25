@@ -23,4 +23,20 @@ public partial class SunManager : Node
 
         GD.Print("Sun: " + CurrentSun);
     }
+    public bool CanAfford(int cost)
+    {
+        return CurrentSun >= cost;
+    }
+
+    public bool SpendSun(int amount)
+    {
+        if (CurrentSun < amount)
+            return false;
+
+        CurrentSun -= amount;
+
+        EmitSignal(SignalName.SunChanged, CurrentSun);
+
+        return true;
+    }
 }

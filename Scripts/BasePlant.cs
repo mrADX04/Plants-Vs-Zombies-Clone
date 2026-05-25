@@ -5,6 +5,8 @@ public partial class BasePlant : StaticBody2D
 {
     [Export] public int MaxHealth = 100;
 
+    [Export] public int SunCost = 100;
+
     private int gridX;
     private int gridY;
     private GridManager gridManager;
