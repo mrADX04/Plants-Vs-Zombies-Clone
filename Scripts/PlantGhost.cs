@@ -28,7 +28,7 @@ public partial class PlantGhost : Node2D
         var selector = PlantSelector.Instance;
 
         // Nothing selected
-        if (selector == null || selector.SelectedPlantScene == null)
+        if (selector == null || selector.SelectedPlantData == null)
         {
             RemoveGhost();
             return;
@@ -38,8 +38,8 @@ public partial class PlantGhost : Node2D
         if (ghostInstance == null)
         {
             // Instantiate the real plant temporarily
-            Node2D tempPlant =
-                selector.SelectedPlantScene.Instantiate<Node2D>();
+            BasePlant tempPlant =
+                selector.SelectedPlantData.PlantScene.Instantiate<BasePlant>();
 
             // ❗ Get ONLY the visual sprite
             Sprite2D originalSprite =
@@ -92,7 +92,7 @@ public partial class PlantGhost : Node2D
         var selector = PlantSelector.Instance;
 
         // Nothing selected
-        if (selector.SelectedPlantScene == null)
+        if (selector.SelectedPlantData == null)
             return;
 
         Vector2 mousePos = GetGlobalMousePosition();
@@ -115,8 +115,7 @@ public partial class PlantGhost : Node2D
             GridManager.Instance.GetSnappedPosition(mousePos);
 
         // ❗ Create REAL plant
-        Node2D plant =
-            selector.SelectedPlantScene.Instantiate<Node2D>();
+        BasePlant plant = selector.SelectedPlantData.PlantScene.Instantiate<BasePlant>();
 
         // Add to gameplay layer
         PlayableLayer.AddChild(plant);
@@ -126,6 +125,9 @@ public partial class PlantGhost : Node2D
 
         // Mark cell occupied
         GridManager.Instance.OccupyCell(col, row, plant);
+
+        //Deduct sun cost
+        SunManager.Instance.SpendSun(selector.SelectedPlantData.SunCost);
 
         // Clear selection after ONE placement
         selector.ClearSelection();

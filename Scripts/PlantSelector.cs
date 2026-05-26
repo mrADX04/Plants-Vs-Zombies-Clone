@@ -5,21 +5,21 @@ public partial class PlantSelector : Node
 {
     public static PlantSelector Instance;
 
-    public PackedScene SelectedPlantScene;
+    public PlantData SelectedPlantData;
 
     public override void _Ready()
     {
         Instance = this;
     }
 
-    public void SelectPlant(PackedScene plantScene)
+    public void SelectPlant(PlantData plantData)
     {
-        SelectedPlantScene = plantScene;
+        SelectedPlantData = plantData;
         GD.Print("Plant selected!");
     }
 
     public void ClearSelection()
     {
-        SelectedPlantScene = null;
+        SelectedPlantData = null;
     }
 }

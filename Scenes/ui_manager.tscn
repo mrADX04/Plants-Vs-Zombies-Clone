@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bswtbc1mh2m0c"]
 
 [ext_resource type="Script" uid="uid://clr62bkmcd122" path="res://Scripts/UIManager.cs" id="1_i37jq"]
-[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/Plants/peashooter.tscn" id="2_cl1wc"]
 [ext_resource type="Texture2D" uid="uid://cqmn6tetyhhn" path="res://Assets/Sprites/TopBar_Background.png" id="2_i37jq"]
 [ext_resource type="Texture2D" uid="uid://qbfsef6ruqwb" path="res://Assets/Sprites/Cards/peashooter_card.png" id="2_laqw3"]
-[ext_resource type="PackedScene" uid="uid://bq1nsoy823nhi" path="res://Scenes/Plants/sunflower.tscn" id="3_2o30e"]
 [ext_resource type="Texture2D" uid="uid://bjpiqunpr4xnk" path="res://Assets/Sprites/Cards/peashooter_card_pressed.png" id="3_k436y"]
 [ext_resource type="Texture2D" uid="uid://csrb2umfocguc" path="res://Assets/Sprites/SunIcon.png" id="3_laqw3"]
 [ext_resource type="FontFile" uid="uid://ncd7ohsjc7uh" path="res://Assets/Font/PublicPixel-rv0pA.ttf" id="4_k436y"]
@@ -12,20 +10,22 @@
 [ext_resource type="Texture2D" uid="uid://bi0nefst7mbpt" path="res://Assets/Sprites/Cards/Sunflower_card.png" id="5_irgxn"]
 [ext_resource type="Texture2D" uid="uid://cx6fkgrbxrjhv" path="res://Assets/Sprites/Cards/Sunflower_card_pressed.png" id="6_4eo48"]
 [ext_resource type="Texture2D" uid="uid://d27ye4ge6rnvv" path="res://Assets/Sprites/Cards/Sunflower_card_hover.png" id="7_02now"]
+[ext_resource type="Script" uid="uid://cnoips6qk4fuq" path="res://Scripts/PlantCard.cs" id="8_cl1wc"]
+[ext_resource type="Resource" uid="uid://c77m1axili0dq" path="res://Resources/PlantData/SunflowerData.tres" id="9_pybxw"]
 [ext_resource type="Texture2D" uid="uid://blf1cfijqj1g1" path="res://Assets/Sprites/Cards/Wallnut_card.png" id="11_gvaor"]
 [ext_resource type="Texture2D" uid="uid://bnnmxhanrottb" path="res://Assets/Sprites/Cards/Wallnut_card_pressed.png" id="12_mgq08"]
+[ext_resource type="Resource" uid="uid://d35idocsj6ir5" path="res://Resources/PlantData/PeashooterData.tres" id="13_tfdfk"]
 [ext_resource type="Texture2D" uid="uid://bmahsvjsnf4lx" path="res://Assets/Sprites/Cards/Wallnut_card_hover.png" id="13_xvsgm"]
 [ext_resource type="Texture2D" uid="uid://nkmgtw1ablue" path="res://Assets/Sprites/shovel.png" id="14_khpyi"]
 [ext_resource type="Texture2D" uid="uid://d0wqxl7souw4b" path="res://Assets/Sprites/shovel_pressed.png" id="15_cl1wc"]
 [ext_resource type="Texture2D" uid="uid://datwao00mbkiw" path="res://Assets/Sprites/shovel_hover.png" id="16_2o30e"]
+[ext_resource type="Resource" uid="uid://dvaxqw5r5jmks" path="res://Resources/PlantData/Wallnut.tres" id="17_r6w30"]
 [ext_resource type="Texture2D" uid="uid://bb2usorgrh4x1" path="res://Assets/Sprites/SettingsIcon.png" id="17_xmyfn"]
 [ext_resource type="Texture2D" uid="uid://laonbu5x43x7" path="res://Assets/Sprites/SettingsIcon_pressed.png" id="18_pybxw"]
 [ext_resource type="Texture2D" uid="uid://c3cb4430rt4i5" path="res://Assets/Sprites/SettingsIcon_hover.png" id="19_tfdfk"]
 
 [node name="UIManager" type="CanvasLayer" unique_id=1170028410]
 script = ExtResource("1_i37jq")
-PeashooterScene = ExtResource("2_cl1wc")
-SunflowerScene = ExtResource("3_2o30e")
 
 [node name="TopBar" type="Control" parent="." unique_id=1736046248]
 layout_mode = 3
@@ -80,6 +80,8 @@ layout_mode = 2
 texture_normal = ExtResource("5_irgxn")
 texture_pressed = ExtResource("6_4eo48")
 texture_hover = ExtResource("7_02now")
+script = ExtResource("8_cl1wc")
+PlantData = ExtResource("9_pybxw")
 
 [node name="PeashooterCard" type="TextureButton" parent="TopBar/CardContainer" unique_id=2656324]
 texture_filter = 1
@@ -87,6 +89,8 @@ layout_mode = 2
 texture_normal = ExtResource("2_laqw3")
 texture_pressed = ExtResource("3_k436y")
 texture_hover = ExtResource("4_wcp00")
+script = ExtResource("8_cl1wc")
+PlantData = ExtResource("13_tfdfk")
 
 [node name="WallnutCard" type="TextureButton" parent="TopBar/CardContainer" unique_id=1034688881]
 texture_filter = 1
@@ -94,6 +98,8 @@ layout_mode = 2
 texture_normal = ExtResource("11_gvaor")
 texture_pressed = ExtResource("12_mgq08")
 texture_hover = ExtResource("13_xvsgm")
+script = ExtResource("8_cl1wc")
+PlantData = ExtResource("17_r6w30")
 
 [node name="ShovelButton" type="TextureButton" parent="TopBar" unique_id=401703815]
 texture_filter = 1

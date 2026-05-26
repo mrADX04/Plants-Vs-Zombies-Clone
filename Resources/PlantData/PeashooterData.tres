@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://d35idocsj6ir5"]
+
+[ext_resource type="Script" uid="uid://dlmxl65onah0t" path="res://Scripts/PlantData.cs" id="1_fxnxx"]
+[ext_resource type="Texture2D" uid="uid://qbfsef6ruqwb" path="res://Assets/Sprites/Cards/peashooter_card.png" id="1_xo06d"]
+[ext_resource type="PackedScene" uid="uid://b58syc1u816g3" path="res://Scenes/Plants/peashooter.tscn" id="2_qnha1"]
+
+[resource]
+script = ExtResource("1_fxnxx")
+PlantName = "Peashooter"
+Icon = ExtResource("1_xo06d")
+PlantScene = ExtResource("2_qnha1")
+metadata/_custom_type_script = "uid://dlmxl65onah0t"

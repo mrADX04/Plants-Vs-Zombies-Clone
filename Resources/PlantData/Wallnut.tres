@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://dvaxqw5r5jmks"]
+
+[ext_resource type="Script" uid="uid://dlmxl65onah0t" path="res://Scripts/PlantData.cs" id="1_6gyw3"]
+[ext_resource type="Texture2D" uid="uid://blf1cfijqj1g1" path="res://Assets/Sprites/Cards/Wallnut_card.png" id="1_cwcmh"]
+[ext_resource type="PackedScene" uid="uid://brndcsj0cgmbo" path="res://Scenes/Plants/wallnut.tscn" id="2_ixb3q"]
+
+[resource]
+script = ExtResource("1_6gyw3")
+PlantName = "Wallnut"
+Icon = ExtResource("1_cwcmh")
+SunCost = 75
+PlantScene = ExtResource("2_ixb3q")
+metadata/_custom_type_script = "uid://dlmxl65onah0t"
