@@ -5,7 +5,7 @@ public partial class SunManager : Node
 {
     public static SunManager Instance;
 
-    public int CurrentSun = 50;
+    public int CurrentSun = 350;
 
     [Signal]
     public delegate void SunChangedEventHandler(int newAmount);

@@ -8,4 +8,5 @@ public partial class PlantData : Resource
     [Export] public int SunCost { get; set; } = 100;
     [Export] public float Cooldown { get; set; } = 7.5f;
     [Export] public PackedScene PlantScene { get; set; }
+    [Export] public Texture2D GhostTexture;
 }

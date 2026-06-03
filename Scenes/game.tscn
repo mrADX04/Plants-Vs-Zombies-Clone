@@ -7,12 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bswtbc1mh2m0c" path="res://Scenes/ui_manager.tscn" id="5_rfjv2"]
 [ext_resource type="PackedScene" uid="uid://b4a5g7mddacmt" path="res://Scenes/Sheeps/sheep_base.tscn" id="5_v158k"]
 [ext_resource type="Script" uid="uid://db8mxhre0ro6j" path="res://Scripts/WaveData.cs" id="6_1l0tm"]
-[ext_resource type="Resource" uid="uid://d35idocsj6ir5" path="res://Resources/PlantData/PeashooterData.tres" id="6_1phco"]
 [ext_resource type="PackedScene" uid="uid://b5pktht727lfl" path="res://Scenes/Sheeps/sheep_tank.tscn" id="6_h4fw4"]
 [ext_resource type="Script" uid="uid://uyyvddixynf7" path="res://Scripts/LaneManager.cs" id="6_i6g32"]
 [ext_resource type="Script" uid="uid://d4agxihthmnsx" path="res://Scripts/PlantGhost.cs" id="7_nb51f"]
-[ext_resource type="Resource" uid="uid://c77m1axili0dq" path="res://Resources/PlantData/SunflowerData.tres" id="7_nnt18"]
-[ext_resource type="Resource" uid="uid://dvaxqw5r5jmks" path="res://Resources/PlantData/Wallnut.tres" id="8_ewbju"]
+[ext_resource type="Texture2D" uid="uid://nkmgtw1ablue" path="res://Assets/Sprites/shovel.png" id="7_rku1e"]
 [ext_resource type="Script" uid="uid://cthbux6f41jpn" path="res://Scripts/SunManager.cs" id="12_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
@@ -168,14 +166,12 @@ GridOffset = Vector2(160, 80)
 script = ExtResource("12_rku1e")
 
 [node name="UIManager" parent="." unique_id=1170028410 instance=ExtResource("5_rfjv2")]
-PeashooterData = ExtResource("6_1phco")
-SunflowerData = ExtResource("7_nnt18")
-WallnutData = ExtResource("8_ewbju")
 
 [node name="PlantGhost" type="Node2D" parent="." unique_id=1600058206 node_paths=PackedStringArray("PlayableLayer")]
 texture_filter = 1
 script = ExtResource("7_nb51f")
 PlayableLayer = NodePath("../PlayableLayer")
+ShovelGhostTexture = ExtResource("7_rku1e")
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=1202095374]
 script = ExtResource("4_wowpa")

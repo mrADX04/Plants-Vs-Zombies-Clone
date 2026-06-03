@@ -11,11 +11,35 @@ public partial class BasePlant : StaticBody2D
     private int gridY;
     private GridManager gridManager;
 
+    private UIManager uiManager;
+
     protected int currentHealth;
 
     public override void _Ready()
     {
         currentHealth = MaxHealth;
+
+        uiManager = GetTree().Root.GetNode<UIManager>("Game/UIManager");
+
+        InputPickable = true; // Enable input picking for this plant
+    }
+
+    public override void _InputEvent(
+    Viewport viewport,
+    InputEvent @event,
+    int shapeIdx)
+    {
+        if (!uiManager.IsShovelActive)
+            return;
+
+        if (@event is InputEventMouseButton mouseButton &&
+            mouseButton.Pressed &&
+            mouseButton.ButtonIndex == MouseButton.Left)
+        {
+            RemovePlant();
+
+            uiManager.IsShovelActive = false;
+        }
     }
 
     public virtual void TakeDamage(int damage)
@@ -42,5 +66,14 @@ public partial class BasePlant : StaticBody2D
         gridX = x;
         gridY = y;
         gridManager = manager;
+    }
+
+    public virtual void RemovePlant()
+    {
+        GD.Print($"{Name} removed by shovel");
+
+        gridManager?.FreeCell(gridX, gridY);
+
+        QueueFree();
     }
 }

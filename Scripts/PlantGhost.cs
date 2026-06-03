@@ -4,9 +4,21 @@ using System;
 public partial class PlantGhost : Node2D
 {
     [Export] public Node2D PlayableLayer;
+    [Export] public Texture2D ShovelGhostTexture;
+
+    private bool showingShovelGhost = false;
+    private UIManager uiManager;
+
+    // Tracks which plant the ghost currently represents
+    private PlantData currentGhostPlantData;
 
     // ❗ Visual-only ghost sprite
     private Node2D ghostInstance;
+
+    public override void _Ready()
+    {
+        uiManager = GetTree().Root.GetNode<UIManager>("Game/UIManager");
+    }
 
     public override void _Process(double delta)
     {
@@ -27,43 +39,40 @@ public partial class PlantGhost : Node2D
     {
         var selector = PlantSelector.Instance;
 
-        // Nothing selected
+        // SHOVEL MODE
+        if (uiManager != null && uiManager.IsShovelActive)
+        {
+            ShowShovelGhost();
+            return;
+        }
+
+        // NORMAL PLANT MODE
         if (selector == null || selector.SelectedPlantData == null)
         {
             RemoveGhost();
             return;
         }
 
-        // ❗ Create ghost if it doesn't exist
-        if (ghostInstance == null)
+        PlantData selectedData = selector.SelectedPlantData;
+
+        // ❗ Create/rebuild ghost when selection changes
+        if (ghostInstance == null || currentGhostPlantData != selectedData)
         {
-            // Instantiate the real plant temporarily
-            BasePlant tempPlant =
-                selector.SelectedPlantData.PlantScene.Instantiate<BasePlant>();
+            RemoveGhost();
 
-            // ❗ Get ONLY the visual sprite
-            Sprite2D originalSprite =
-                tempPlant.GetNode<Sprite2D>("Sprite2D");
+            currentGhostPlantData = selectedData;
 
-            // ❗ Create a brand-new sprite for the ghost
             Sprite2D ghostSprite = new Sprite2D();
 
-            // Copy visuals
-            ghostSprite.Texture = originalSprite.Texture;
-            ghostSprite.Scale = originalSprite.Scale;
-            ghostSprite.Rotation = originalSprite.Rotation;
-            ghostSprite.FlipH = originalSprite.FlipH;
-            ghostSprite.FlipV = originalSprite.FlipV;
+            // Use the GhostTexture directly from PlantData
+            ghostSprite.Texture = selectedData.GhostTexture;
+            ghostSprite.Centered = true;
 
             // Semi-transparent silhouette
-            ghostSprite.Modulate =
-                new Color(1, 1, 1, 0.5f);
+            ghostSprite.Modulate = new Color(1, 1, 1, 0.5f);
 
             // Use sprite as ghost
             ghostInstance = ghostSprite;
-
-            // Cleanup temporary plant
-            tempPlant.QueueFree();
 
             // Add ghost to scene
             AddChild(ghostInstance);
@@ -71,8 +80,7 @@ public partial class PlantGhost : Node2D
 
         Vector2 mousePos = GetGlobalMousePosition();
 
-        bool insideGrid =
-            GridManager.Instance.IsInsideGrid(mousePos);
+        bool insideGrid = GridManager.Instance.IsInsideGrid(mousePos);
 
         // Hide outside lawn
         ghostInstance.Visible = insideGrid;
@@ -81,10 +89,31 @@ public partial class PlantGhost : Node2D
             return;
 
         // Snap ghost to grid
-        Vector2 snappedPos =
-            GridManager.Instance.GetSnappedPosition(mousePos);
+        Vector2 snappedPos = GridManager.Instance.GetSnappedPosition(mousePos);
 
         ghostInstance.GlobalPosition = snappedPos;
+    }
+
+    private void ShowShovelGhost()
+    {
+        if (!showingShovelGhost)
+        {
+            RemoveGhost();
+
+            Sprite2D ghostSprite = new Sprite2D();
+
+            ghostSprite.Texture = ShovelGhostTexture;
+            ghostSprite.Centered = true;
+            ghostSprite.Modulate = new Color(1, 1, 1, 0.5f);
+
+            ghostInstance = ghostSprite;
+
+            AddChild(ghostInstance);
+
+            showingShovelGhost = true;
+        }
+
+        ghostInstance.GlobalPosition = GetGlobalMousePosition();
     }
 
     private void TryPlacePlant()
@@ -101,8 +130,7 @@ public partial class PlantGhost : Node2D
         if (!GridManager.Instance.IsInsideGrid(mousePos))
             return;
 
-        Vector2I gridCoords =
-            GridManager.Instance.GetGridCoordinates(mousePos);
+        Vector2I gridCoords = GridManager.Instance.GetGridCoordinates(mousePos);
 
         int col = gridCoords.X;
         int row = gridCoords.Y;
@@ -111,8 +139,7 @@ public partial class PlantGhost : Node2D
         if (!GridManager.Instance.IsCellFree(col, row))
             return;
 
-        Vector2 snappedPos =
-            GridManager.Instance.GetSnappedPosition(mousePos);
+        Vector2 snappedPos = GridManager.Instance.GetSnappedPosition(mousePos);
 
         // ❗ Create REAL plant
         BasePlant plant = selector.SelectedPlantData.PlantScene.Instantiate<BasePlant>();
@@ -126,7 +153,7 @@ public partial class PlantGhost : Node2D
         // Mark cell occupied
         GridManager.Instance.OccupyCell(col, row, plant);
 
-        //Deduct sun cost
+        // Deduct sun cost
         SunManager.Instance.SpendSun(selector.SelectedPlantData.SunCost);
 
         // Clear selection after ONE placement
@@ -143,5 +170,8 @@ public partial class PlantGhost : Node2D
             ghostInstance.QueueFree();
             ghostInstance = null;
         }
+
+        currentGhostPlantData = null;
+        showingShovelGhost = false;
     }
 }

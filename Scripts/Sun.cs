@@ -14,11 +14,21 @@ public partial class Sun : Area2D
 
     private CollisionShape2D collisionShape;
 
+    private Timer lifetimeTimer;
+
+
     public override void _Ready()
     {
         collisionShape = GetNode<CollisionShape2D>(
-        "CollisionShape2D" );
-        
+            "CollisionShape2D"
+        );
+
+        lifetimeTimer = GetNode<Timer>(
+            "LifetimeTimer"
+        );
+
+        lifetimeTimer.Timeout += OnLifetimeExpired;
+
         // Detect mouse clicks
         InputEvent += OnInputEvent;
     }
@@ -63,6 +73,9 @@ public partial class Sun : Area2D
             {
                 isCollected = true;
 
+                // Stop despawn timer
+                lifetimeTimer.Stop();
+
                 // Disable further interaction
                 collisionShape.Disabled = true;
 
@@ -70,5 +83,14 @@ public partial class Sun : Area2D
                 GetViewport().SetInputAsHandled();
             }
         }
+    }
+
+    private void OnLifetimeExpired()
+    {
+        // Don't despawn if already being collected
+        if (isCollected)
+            return;
+
+        QueueFree();
     }
 }

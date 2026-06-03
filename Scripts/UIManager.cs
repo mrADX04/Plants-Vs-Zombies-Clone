@@ -5,6 +5,8 @@ public partial class UIManager : CanvasLayer
 {
     private Label sunLabel;
 
+    public bool IsShovelActive = false;
+
     public override void _Ready()
     {
 
@@ -23,5 +25,17 @@ public partial class UIManager : CanvasLayer
     private void UpdateSunCounter(int amount)
     {
         sunLabel.Text = amount.ToString();
+    }
+
+    public void OnShovelButtonPressed()
+    {
+        IsShovelActive = !IsShovelActive;
+
+        if (IsShovelActive)
+        {
+            PlantSelector.Instance.ClearSelection();
+        }
+
+        GD.Print("Shovel Active: " + IsShovelActive);
     }
 }
