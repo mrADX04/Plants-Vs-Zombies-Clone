@@ -15,7 +15,7 @@ public partial class PlantSelector : Node
     public void SelectPlant(PlantData plantData)
     {
         SelectedPlantData = plantData;
-        GD.Print("Plant selected!");
+        //GD.Print("Plant selected!");
     }
 
     public void ClearSelection()

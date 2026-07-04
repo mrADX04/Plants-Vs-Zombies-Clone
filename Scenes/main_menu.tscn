@@ -1,13 +1,72 @@
 [gd_scene format=3 uid="uid://ps33f0mxsne1"]
 
 [ext_resource type="Script" uid="uid://dbgwxe58qfjc7" path="res://Scripts/MainMenu.cs" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://pppqosrplmq" path="res://Assets/Sprites/MainMenuImage.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cc3mybjgm0q7q" path="res://Assets/Sprites/Main Menu bg.png" id="2_48xlc"]
+[ext_resource type="Theme" uid="uid://s54kbag3twix" path="res://Assets/Themes/PixelTheme.tres" id="3_1ehe0"]
 
-[node name="main_menu" type="Node2D" unique_id=1893951610]
+[node name="main_menu" type="Control" unique_id=1852050920]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="MainMenuImage" type="Sprite2D" parent="." unique_id=173194079]
+[node name="Background" type="TextureRect" parent="." unique_id=223478369]
 texture_filter = 1
-position = Vector2(104, 64)
-scale = Vector2(0.81249994, 0.8888889)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_48xlc")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ButtonContainer" type="Control" parent="." unique_id=1644185332]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -47.0
+offset_right = 71.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85801435, 0.87918603)
+theme = ExtResource("3_1ehe0")
+
+[node name="StartButton" type="Button" parent="ButtonContainer" unique_id=893090217]
+modulate = Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+layout_mode = 0
+offset_left = 31.5
+offset_top = 27.5
+offset_right = 152.5
+offset_bottom = 58.5
+scale = Vector2(0.46951073, 0.6018682)
+text = "START"
+
+[node name="HallOfFameButton" type="Button" parent="ButtonContainer" unique_id=2121027271]
+modulate = Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+layout_mode = 0
+offset_left = 16.316746
+offset_top = 47.77146
+offset_right = 216.31674
+offset_bottom = 78.77147
+scale = Vector2(0.46951073, 0.6018682)
+text = "HALL OF FAME"
+
+[node name="QuitButton" type="Button" parent="ButtonContainer" unique_id=191552800]
+modulate = Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+layout_mode = 0
+offset_left = 31.5
+offset_top = 68.5
+offset_right = 152.5
+offset_bottom = 99.5
+scale = Vector2(0.46951073, 0.6018682)
+text = "QUIT"

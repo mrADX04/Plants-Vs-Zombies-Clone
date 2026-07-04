@@ -46,7 +46,7 @@ public partial class BasePlant : StaticBody2D
     {
         currentHealth -= damage;
 
-        GD.Print($"{Name} took {damage} damage. HP: {currentHealth}");
+        //GD.Print($"{Name} took {damage} damage. HP: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -56,7 +56,7 @@ public partial class BasePlant : StaticBody2D
 
     protected virtual void Die()
     {
-        GD.Print($"{Name} died");
+        //GD.Print($"{Name} died");
         gridManager?.FreeCell(gridX, gridY);
         QueueFree(); // Remove the plant from the scene
     }
@@ -70,7 +70,7 @@ public partial class BasePlant : StaticBody2D
 
     public virtual void RemovePlant()
     {
-        GD.Print($"{Name} removed by shovel");
+        //GD.Print($"{Name} removed by shovel");
 
         gridManager?.FreeCell(gridX, gridY);
 

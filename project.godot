@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Plants vs Zmbie Clone"
-run/main_scene="uid://d1v1dmxbse8hf"
+run/main_scene="uid://ps33f0mxsne1"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SurvivalTimer="*uid://chus72r3l33s1"
+HighScoreManager="*uid://bmurh6f0ljoge"
+GameManager="*uid://crqfacrnd2yym"
 
 [display]
 

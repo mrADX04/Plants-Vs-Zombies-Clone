@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b2xja4mood25x"]
+
+[ext_resource type="Theme" uid="uid://s54kbag3twix" path="res://Assets/Themes/PixelTheme.tres" id="1_8fo1c"]
+[ext_resource type="Script" uid="uid://b2snynkarbr5r" path="res://Scripts/GameOver.cs" id="1_ojehl"]
+
+[node name="GameOver" type="Control" unique_id=1574954589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8fo1c")
+script = ExtResource("1_ojehl")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1958781760]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=975912014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=949357495]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=826356724]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="CurrentScoreLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1547294018]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "Current Score"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=310843208]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "High Score"
+horizontal_alignment = 1
+
+[node name="NewHighScoreLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1165942263]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "NEW RECORD!"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=814676849]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 4
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=813385043]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 4
+text = "Main Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RetryButton" to="." method="OnRetryButtonPressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="OnMainMenuButtonPressed"]

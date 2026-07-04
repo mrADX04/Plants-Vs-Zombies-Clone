@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://d1v1dmxbse8hf"]
 
+[ext_resource type="Script" uid="uid://elctweweaal5" path="res://Scripts/Game.cs" id="1_1phco"]
 [ext_resource type="Texture2D" uid="uid://cbvdyl8cukdib" path="res://Assets/Tilemap/tilemap.png" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://b7rg8pltsqcin" path="res://Scripts/GridManager.cs" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://blpycouysoliu" path="res://Scenes/plant_selector.tscn" id="4_rku1e"]
@@ -12,6 +13,7 @@
 [ext_resource type="Script" uid="uid://d4agxihthmnsx" path="res://Scripts/PlantGhost.cs" id="7_nb51f"]
 [ext_resource type="Texture2D" uid="uid://nkmgtw1ablue" path="res://Assets/Sprites/shovel.png" id="7_rku1e"]
 [ext_resource type="Script" uid="uid://cthbux6f41jpn" path="res://Scripts/SunManager.cs" id="12_rku1e"]
+[ext_resource type="Script" uid="uid://bq0col0vvacgt" path="res://Scripts/LoseZone.cs" id="14_nb51f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_wrm1d")
@@ -119,6 +121,9 @@ texture = ExtResource("1_wrm1d")
 [sub_resource type="TileSet" id="TileSet_6bp64"]
 sources/0 = SubResource("TileSetAtlasSource_21xkr")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnt18"]
+size = Vector2(15, 80)
+
 [sub_resource type="Resource" id="Resource_v158k"]
 script = ExtResource("6_1l0tm")
 SpawnInterval = 2.5
@@ -141,6 +146,7 @@ MaxSpawnPerTick = 5
 metadata/_custom_type_script = "uid://db8mxhre0ro6j"
 
 [node name="Game" type="Node2D" unique_id=1633921174]
+script = ExtResource("1_1phco")
 
 [node name="PlayableLayer" type="TileMapLayer" parent="." unique_id=623035823]
 texture_filter = 1
@@ -154,6 +160,14 @@ texture_filter = 1
 position = Vector2(-128, -48)
 tile_map_data = PackedByteArray("AAAIAAMAAAAAAAAAAAAIAAQAAAAAAAEAAAAJAAMAAAABAAAAAAAJAAQAAAABAAEAAAAKAAMAAAACAAAAAAAKAAQAAAACAAEAAAALAAMAAAADAAAAAAALAAQAAAADAAEAAAAMAAMAAAAEAAAAAAAMAAQAAAAEAAEAAAANAAMAAAAFAAAAAAANAAQAAAAFAAEAAAAOAAMAAAAGAAAAAAAOAAQAAAAGAAEAAAAPAAMAAAAHAAAAAAAPAAQAAAAHAAEAAAAQAAMAAAAIAAAAAAAQAAQAAAAIAAEAAAARAAMAAAAJAAAAAAARAAQAAAAJAAEAAAASAAMAAAAKAAAAAAASAAQAAAAKAAEAAAATAAMAAAALAAAAAAATAAQAAAALAAEAAAAUAAMAAAAMAAAAAAAUAAQAAAAMAAEAAAAIAAUAAAAAAAIAAAAIAAYAAAAAAAMAAAAIAAcAAAAAAAQAAAAIAAgAAAAAAAUAAAAIAAkAAAAAAAYAAAAIAAoAAAAAAAcAAAAJAAUAAAABAAIAAAAJAAYAAAABAAMAAAAJAAcAAAABAAQAAAAJAAgAAAABAAUAAAAJAAkAAAABAAYAAAAJAAoAAAABAAcAAAAKAAoAAAACAAcAAAALAAoAAAADAAcAAAAMAAoAAAAEAAcAAAANAAoAAAAFAAcAAAAOAAoAAAAGAAcAAAAPAAoAAAAHAAcAAAAQAAoAAAAIAAcAAAARAAoAAAAJAAcAAAASAAoAAAAKAAcAAAATAAoAAAALAAcAAAAUAAoAAAAMAAcAAAA=")
 tile_set = SubResource("TileSet_6bp64")
+
+[node name="LoseZone" type="Area2D" parent="." unique_id=1360403470]
+collision_mask = 4
+script = ExtResource("14_nb51f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoseZone" unique_id=224381646]
+position = Vector2(18.5, 72)
+shape = SubResource("RectangleShape2D_nnt18")
 
 [node name="GridManager" type="Node2D" parent="." unique_id=2031252140]
 position = Vector2(-128, -48)

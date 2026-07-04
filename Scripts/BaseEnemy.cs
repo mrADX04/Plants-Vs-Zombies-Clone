@@ -57,7 +57,7 @@ public partial class BaseEnemy : CharacterBody2D
 
     private void Die()
     {
-        GD.Print("Enemy died");
+        //GD.Print("Enemy died");
         QueueFree();
     }
 
@@ -67,7 +67,7 @@ public partial class BaseEnemy : CharacterBody2D
         {
             targetPlant = plant;
             attackTimer = 0f; // reset
-            GD.Print("Plant detected!");
+            //GD.Print("Plant detected!");
         }
     }
 
@@ -76,7 +76,7 @@ public partial class BaseEnemy : CharacterBody2D
         if (body == targetPlant)
         {
             targetPlant = null;
-            GD.Print("Plant left range!");
+            //GD.Print("Plant left range!");
         }
     }
 
@@ -91,7 +91,7 @@ public partial class BaseEnemy : CharacterBody2D
             if (targetPlant != null)
             {
                 targetPlant.TakeDamage(Damage);
-                GD.Print("Attacking plant!");
+                //GD.Print("Attacking plant!");
             }
         }
     }
