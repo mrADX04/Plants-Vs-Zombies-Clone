@@ -13,7 +13,7 @@ size = Vector2(2, 12)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_ku1f7")
-Speed = 10.0
+Speed = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=233218721]
 texture_filter = 1

@@ -7,48 +7,42 @@ public partial class GameOver : Control
 
     public override void _Ready()
     {
-        GD.Print("GameOver Ready!");
-
-        GD.Print("GM = " + GameManager.Instance);
-
-        GD.Print("HS = " + HighScoreManager.Instance);
-
         Label currentScoreLabel = GetNode<Label>("CenterContainer/VBoxContainer/CurrentScoreLabel");
 
         Label highScoreLabel = GetNode<Label>("CenterContainer/VBoxContainer/HighScoreLabel");
 
         Label newHighScoreLabel = GetNode<Label>("CenterContainer/VBoxContainer/NewHighScoreLabel");
 
-        Button retryButton = GetNode<Button>("CenterContainer/VBoxContainer/RetryButton");
+        retryButton = GetNode<Button>("CenterContainer/VBoxContainer/RetryButton");
 
-        Button mainMenuButton = GetNode<Button>("CenterContainer/VBoxContainer/MainMenuButton");
+        mainMenuButton = GetNode<Button>("CenterContainer/VBoxContainer/MainMenuButton");
 
-        currentScoreLabel.Text = $"Score: {GameManager.Instance.CurrentScore}";
+        currentScoreLabel.Text = $"Score: {SurvivalTimer.Instance.SurvivalSeconds}";
 
         highScoreLabel.Text = $"High Score: {HighScoreManager.Instance.HighScore}";
 
+        GD.Print("IsNewHighScore = " + HighScoreManager.Instance.IsNewHighScore);
         newHighScoreLabel.Visible = HighScoreManager.Instance.IsNewHighScore;
+
+        retryButton.Pressed += OnRetryButtonPressed;
+        mainMenuButton.Pressed += OnMainMenuButtonPressed;
 
     }
 
     private void OnRetryButtonPressed()
     {
-        GD.Print(GameManager.Instance);
-
-        GameManager.Instance.CurrentScore = 0;
-
         SurvivalTimer.Instance.ResetTimer();
+
+        GameManager.Instance.ResetGame();
 
         GetTree().ChangeSceneToFile("res://Scenes/game.tscn");
     }
 
     private void OnMainMenuButtonPressed()
     {
-        GD.Print(GameManager.Instance);
-
-        GameManager.Instance.CurrentScore = 0;
-
         SurvivalTimer.Instance.ResetTimer();
+
+        GameManager.Instance.ResetGame();
 
         GetTree().ChangeSceneToFile("res://Scenes/main_menu.tscn");
     }

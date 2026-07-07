@@ -4,32 +4,44 @@ public partial class GameManager : Node
 {
     public static GameManager Instance;
 
-    public int CurrentScore = 0;
+    private bool gameOverTriggered = false;
 
     public override void _Ready()
     {
         Instance = this;
-
-        GD.Print("GameManager Ready!"); //check only , remove later
-    }
-
-    public void AddScore(int amount)
-    {
-        CurrentScore += amount;
     }
 
     public void GameOver()
     {
+
+        if (gameOverTriggered)
+            return;
+
+        gameOverTriggered = true;
+
         HighScoreManager.Instance.IsNewHighScore = false;
 
-        if (CurrentScore > HighScoreManager.Instance.HighScore)
+        int finalScore = SurvivalTimer.Instance.SurvivalSeconds;
+
+        GD.Print("Final Score: ", finalScore);
+        GD.Print("Old High Score: ", HighScoreManager.Instance.HighScore);
+
+        if (finalScore > HighScoreManager.Instance.HighScore)
         {
+            GD.Print("NEW HIGH SCORE!");
+
             HighScoreManager.Instance.IsNewHighScore = true;
 
-            HighScoreManager.Instance.SetHighScore(CurrentScore);
+            HighScoreManager.Instance.SetHighScore(finalScore);
         }
 
-        GetTree().CallDeferred(
-            SceneTree.MethodName.ChangeSceneToFile,"res://Scenes/game_over.tscn");
+        GD.Print("Flag = ", HighScoreManager.Instance.IsNewHighScore);
+
+        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile,"res://Scenes/game_over.tscn");
+    }
+
+    public void ResetGame()
+    {
+        gameOverTriggered = false;
     }
 }

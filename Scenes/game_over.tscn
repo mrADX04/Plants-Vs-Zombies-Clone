@@ -71,6 +71,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 4
 text = "Main Menu"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/RetryButton" to="." method="OnRetryButtonPressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="OnMainMenuButtonPressed"]
