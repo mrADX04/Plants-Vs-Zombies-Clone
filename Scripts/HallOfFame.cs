@@ -8,7 +8,7 @@ public partial class HallOfFame : Control
         Label scoreLabel = GetNode<Label>("HighScoreLabel");
 
         //scoreLabel.Text = "Highest Score\n\n" + ScoreManager.Instance.HighScore.ToString(); --> Older Version to be decided which one to keep
-        scoreLabel.Text = "Highest Score\n\n" + HighScoreManager.Instance.HighScore.ToString();
+        scoreLabel.Text = HighScoreManager.Instance.HighScore.ToString() + " secs";
 
         GetNode<Button>("BackButton").Pressed += OnBackPressed;
     }

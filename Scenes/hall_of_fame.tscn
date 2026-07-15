@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d3ha8lx8ghph8"]
 
 [ext_resource type="Script" uid="uid://055syk78pdwq" path="res://Scripts/HallOfFame.cs" id="1_b02ju"]
+[ext_resource type="Texture2D" uid="uid://b45pcn0lxrhro" path="res://Assets/Sprites/HallOfFame.png" id="2_ijlg4"]
+[ext_resource type="Theme" uid="uid://s54kbag3twix" path="res://Assets/Themes/PixelTheme.tres" id="3_y3bot"]
 
 [node name="HallOfFame" type="Control" unique_id=902032515]
 layout_mode = 3
@@ -11,17 +13,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b02ju")
 
-[node name="Background" type="TextureRect" parent="." unique_id=732121294]
+[node name="Background" type="TextureRect" parent="." unique_id=1411950882]
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_ijlg4")
 
 [node name="HighScoreLabel" type="Label" parent="." unique_id=175586438]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 62.0
+offset_top = 38.0
+offset_right = 93.0
+offset_bottom = 50.0
+theme = ExtResource("3_y3bot")
+theme_override_constants/line_spacing = 3
+theme_override_font_sizes/font_size = 10
+text = "100"
 
 [node name="BackButton" type="Button" parent="." unique_id=912398095]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 90.0
+offset_top = 67.0
+offset_right = 118.0
+offset_bottom = 80.0
+theme = ExtResource("3_y3bot")
+theme_override_font_sizes/font_size = 5
+text = "Back"

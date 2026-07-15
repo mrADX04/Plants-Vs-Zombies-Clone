@@ -24,7 +24,7 @@ public partial class MainMenu : Control
 
     private void OnHallOfFamePressed()
     {
-        GD.Print("Hall of Fame");
+        GetTree().ChangeSceneToFile("res://Scenes/hall_of_fame.tscn");
     }
 
     private void OnQuitPressed()
